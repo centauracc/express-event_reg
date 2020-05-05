@@ -25,7 +25,6 @@ const updateEvent = async (req, res, next) => {
   try {
     const eventIdToUpdate = req.params.id;
     const eventToUpdate = await Event.findOne({ _id: eventIdToUpdate });
-
     if (!eventToUpdate) {
       const invalidEventIdForUpdateError = new Error(
         "Invalid event ID for update"
@@ -52,7 +51,6 @@ const deleteEvent = async (req, res, next) => {
   try {
     const eventIdToDelete = req.params.id;
     const eventToDelete = await Event.findOne({ _id: eventIdToDelete });
-
     if (!eventToDelete) {
       const invalidEventIdForDeleteError = new Error(
         "Invalid event ID for deletion"

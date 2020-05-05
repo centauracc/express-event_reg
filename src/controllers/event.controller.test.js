@@ -23,10 +23,10 @@ describe("event.controller", () => {
       "1": "GET /events",
       "2": "GET /events:id",
       "3": "POST /events",
-      "4": "PUT /events/:id",
+      "4": "PATCH /events/:id",
       "5": "DELETE /events/:id",
-      "6": "POST /user/login",
-      "7": "POST /user/logout",
+      "6": "POST /users/login",
+      "7": "POST /users/logout",
     };
 
     const { body } = await request(app).get("/").expect(200);
@@ -76,7 +76,7 @@ describe("event.controller", () => {
     expect(body).toMatchObject(eventToModify);
   });
 
-  test.only("DELETE /:id should delete an event", async () => {
+  test("DELETE /:id should delete an event", async () => {
     const { _id: eventIdToDelete } = await Event.findOne({
       title: eventData[1].title,
     })
@@ -87,7 +87,6 @@ describe("event.controller", () => {
       .delete(`/events/${eventIdToDelete}`)
       .expect(200);
 
-    eventData[1].date = eventData[1].date.toISOString();
     expect(body).toMatchObject(eventData[1]);
   });
 });
