@@ -5,6 +5,13 @@ const express = require("express");
 const app = express();
 app.use(express.json()); // required if you use req.body
 
+const cors = require("cors");
+var corsOptions = {
+  origin: process.env.FRONTEND_URL,
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
 app.get("/", (req, res) => {
   res.send({
     "0": "GET /",

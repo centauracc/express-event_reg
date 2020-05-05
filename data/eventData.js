@@ -1,7 +1,7 @@
 module.exports = [
   {
     title: "Film Festival",
-    date: new Date("May 11, 2020 19:30:00 +0800"),
+    date: new Date("May 8, 2020 19:30:00 +0800"),
     venue: {
       address: "11 Kent Ridge Drive #01-01",
       postalCode: "119244",
@@ -10,7 +10,7 @@ module.exports = [
   },
   {
     title: "Homecoming",
-    date: new Date("May 15, 2020 17:00:00 +0800"),
+    date: new Date("May 16, 2020 17:00:00 +0800"),
     venue: {
       address: "2 College Ave West",
       postalCode: "138607",
