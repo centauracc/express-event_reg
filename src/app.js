@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     "1": "GET /events",
     "2": "GET /events:id",
     "3": "POST /events",
-    "4": "PATCH /events/:id",
+    "4": "PUT /events/:id",
     "5": "DELETE /events/:id",
     "6": "POST /users/login",
     "7": "POST /users/logout",

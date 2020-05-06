@@ -23,7 +23,7 @@ describe("event.controller", () => {
       "1": "GET /events",
       "2": "GET /events:id",
       "3": "POST /events",
-      "4": "PATCH /events/:id",
+      "4": "PUT /events/:id",
       "5": "DELETE /events/:id",
       "6": "POST /users/login",
       "7": "POST /users/logout",
@@ -50,7 +50,7 @@ describe("event.controller", () => {
     expect(body).toMatchObject(eventData[0]);
   });
 
-  test("PATCH /events/:id should modify an event", async () => {
+  test("PUT /events/:id should modify an event", async () => {
     const { _id: eventIdToModify } = await Event.findOne({
       title: eventData[0].title,
     })
@@ -68,7 +68,7 @@ describe("event.controller", () => {
     };
 
     const { body } = await request(app)
-      .patch(`/events/${eventIdToModify}`)
+      .put(`/events/${eventIdToModify}`)
       .send(eventToModify)
       .expect(200);
 

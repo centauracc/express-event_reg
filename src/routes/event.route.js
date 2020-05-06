@@ -10,7 +10,7 @@ const { validateJsonContent } = require("../utils/common");
 
 router.get("/", displayEvents);
 router.post("/", validateJsonContent, createEvent);
-router.patch("/:id", validateJsonContent, updateEvent);
+router.put("/:id", validateJsonContent, updateEvent);
 router.delete("/:id", deleteEvent);
 
 module.exports = router;
